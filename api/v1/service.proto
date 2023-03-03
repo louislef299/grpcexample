@@ -1,0 +1,13 @@
+syntax = "proto3";
+package proto; 
+import "google/protobuf/empty.proto";
+
+option go_package = "example.com/grpctest";
+
+service ExampleService {
+    rpc Ping(.google.protobuf.Empty) returns (PingResponse);
+}
+
+message PingResponse {
+    string msg = 1;
+}
