@@ -41,6 +41,7 @@ func main() {
 	}
 }
 
+// grpcurl -plaintext -proto api/v1/service.proto localhost:50051 proto.ExampleService/Ping
 func (s *server) Ping(ctx context.Context, in *emptypb.Empty) (*pb.PingResponse, error) {
 	return &pb.PingResponse{
 		Msg: "Pong",
