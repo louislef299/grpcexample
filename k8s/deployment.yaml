@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ping-grpc-server
+spec:
+  selector:
+    matchLabels:
+      app: ping-grpc-server
+  template:
+    metadata:
+      labels:
+        app: ping-grpc-server
+    spec:
+      containers:
+      - name: ping-grpc-server
+        image: ping-grpc-server:latest
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 50051
