@@ -13,7 +13,7 @@ proto:
 	 $(SRC_DIR)/service.proto
 
 container:
-	docker build -t ping-grpc-server .
+	docker build -t docker.io/ping-grpc-server:v0.0.1 .
 
 clean: 
 	rm server

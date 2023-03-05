@@ -47,3 +47,5 @@ func (s *server) Ping(ctx context.Context, in *emptypb.Empty) (*pb.PingResponse,
 		Msg: "Pong",
 	}, nil
 }
+
+// grpcurl -plaintext -proto api/v1/service.proto https://127.0.0.1:54164/api/v1/namespaces/default/services/ping-grpc-server:80 proto.ExampleService/Ping
