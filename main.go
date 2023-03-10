@@ -41,11 +41,11 @@ func main() {
 	}
 }
 
-// grpcurl -plaintext -proto api/v1/service.proto localhost:50051 proto.ExampleService/Ping
 func (s *server) Ping(ctx context.Context, in *emptypb.Empty) (*pb.PingResponse, error) {
 	return &pb.PingResponse{
 		Msg: "Pong",
 	}, nil
 }
 
-// grpcurl -plaintext -proto api/v1/service.proto https://127.0.0.1:54164/api/v1/namespaces/default/services/ping-grpc-server:80 proto.ExampleService/Ping
+// grpcurl -plaintext -proto api/v1/service.proto localhost:50051 proto.ExampleService/Ping
+// ghz --proto api/v1/service.proto --call proto.ExampleService/Ping ping.dev2.mlife:80 -c 10 -n 100

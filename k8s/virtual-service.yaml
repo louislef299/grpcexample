@@ -1,20 +1,19 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
-  name: virtual-svc
+  name: ping-grpc-service
   namespace: lefebl4
 spec:
   hosts:
-  - ping.infra2.mlife
+  - ping.dev2.mlife
   gateways:
-  - lefebl4/ping-grpc-gwy
+  - ping-grpc-gwy
   http:
-  - fault:
-      delay:
-        percentage:
-          value: 100.0
-        fixedDelay: 10s
-    route:
+  - route:
     - destination:
-        host: ping.infra2.mlife
-        subset: v1
+        host: ping-grpc-service.lefebl4.svc.cluster.local
+        port:
+          number: 50051
+    match:
+    - uri:
+        prefix: /

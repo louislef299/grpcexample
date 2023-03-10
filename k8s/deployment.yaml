@@ -11,11 +11,15 @@ spec:
     metadata:
       labels:
         app: ping-grpc-server
+      annotations:
+        istio-injection: enabled
     spec:
       containers:
       - name: ping-grpc-server
-        image: docker.io/library/ping-grpc-server:v0.0.1
-        imagePullPolicy: IfNotPresent
+        image: 895940838762.dkr.ecr.us-east-1.amazonaws.com/ping-grpc-server:latest
+        imagePullPolicy: Always
+        command:
+          - "./server"
         resources:
           limits:
             memory: "128Mi"

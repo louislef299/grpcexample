@@ -4,10 +4,10 @@ metadata:
   name: ping-example
   namespace: istio-system
 spec:
-  commonName: ping.infra2.mlife # required alongside dnsNames below for AWS PCA Issuers
+  commonName: ping.dev2.mlife # required alongside dnsNames below for AWS PCA Issuers
   secretName: ping-example
   dnsNames:
-  - ping.infra2.mlife
+  - ping.dev2.mlife
   usages:
   - digital signature
   - key encipherment

@@ -5,14 +5,14 @@ metadata:
   namespace: lefebl4
 spec:
   selector:
-    app: ping-grpc-server
+    app: istio-ingressgateway
   servers:
   - port:
       number: 443
-      name: https
+      name: https-ping
       protocol: HTTPS
     tls:
       mode: SIMPLE
       credentialName: ping-example
     hosts:
-    - ping.infra2.mlife
+    - "ping.dev2.mlife"
