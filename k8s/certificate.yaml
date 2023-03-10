@@ -1,0 +1,18 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: ping-example
+  namespace: istio-system
+spec:
+  commonName: ping.infra2.mlife # required alongside dnsNames below for AWS PCA Issuers
+  secretName: ping-example
+  dnsNames:
+  - ping.infra2.mlife
+  usages:
+  - digital signature
+  - key encipherment
+  - server auth  # some devices, specifically iOS, require 'server auth' in server certs
+  issuerRef:
+    name: mlife-acmpca-ca
+    kind: AWSPCAClusterIssuer
+    group: awspca.cert-manager.io

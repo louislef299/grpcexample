@@ -10,5 +10,8 @@ spec:
       number: 443
       name: https
       protocol: HTTPS
+    tls:
+      mode: SIMPLE
+      credentialName: ping-example
     hosts:
-    - ping.example.com
+    - ping.infra2.mlife
