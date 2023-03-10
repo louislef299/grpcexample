@@ -1,0 +1,6 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: lefebl4
+  annotations:
+    istio-injection: enabled
