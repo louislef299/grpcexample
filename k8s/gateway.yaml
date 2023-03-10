@@ -2,6 +2,7 @@ apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
   name: ping-grpc-gwy
+  namespace: lefebl4
 spec:
   selector:
     app: ping-grpc-server
