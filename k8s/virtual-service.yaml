@@ -1,4 +1,4 @@
-apiVersion: networking.istio.io/v1alpha3
+apiVersion: networking.istio.io/v1beta1
 kind: VirtualService
 metadata:
   name: ping-grpc-service
@@ -13,7 +13,4 @@ spec:
     - destination:
         host: ping-grpc-service.lefebl4.svc.cluster.local
         port:
-          number: 50051
-    match:
-    - uri:
-        prefix: /
+          number: 443

@@ -4,9 +4,11 @@ metadata:
   name: ping-grpc-service
   namespace: lefebl4
 spec:
+  type: ClusterIP
   selector:
     app: ping-grpc-server
   ports:
-  - port: 50051
+  - port: 443
+    targetPort: 50051
     protocol: TCP
-    name: grpc
+    name: grpc-ping
