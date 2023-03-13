@@ -17,3 +17,9 @@ container:
 
 clean: 
 	rm server
+
+request:
+	grpcurl -plaintext -proto api/v1/service.proto ping.dev2.mlife:443 proto.ExampleService/Ping
+
+requests:
+	./scripts/create-traffic.sh
